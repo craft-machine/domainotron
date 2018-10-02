@@ -30,8 +30,8 @@ Domainotron.get_domain('https://www.google.com')
 Leave `www` subdomain:
 
 ```ruby
-Domainotron.get_domain('https://google.com', remove_www=false)
-# => 'wwww.google.com'
+Domainotron.get_domain('https://www.google.com', remove_www=false)
+# => 'www.google.com'
 
 ```
 
