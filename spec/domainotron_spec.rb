@@ -38,6 +38,8 @@ RSpec.describe Domainotron do
         ['royalhaskoningdhv.co.uk:80/index.php', 'royalhaskoningdhv.co.uk'],
         ['royalhaskoningdhv.co.uk:443/test', 'royalhaskoningdhv.co.uk'],
         ['https://www.royalhaskoningdhv.co.uk:80?get_params=1', 'royalhaskoningdhv.co.uk'],
+        ['https://awww.com', 'awww.com'],
+        ['https://www.awww.com', 'awww.com'],
       ].each do |test_case|
         it "extracts #{test_case[1]} domain from #{test_case[0]}" do
           expect(subject.get_domain test_case[0]).to eq test_case[1]

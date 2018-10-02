@@ -11,7 +11,7 @@ module Domainotron
     domain = URI.parse(normalized).host
 
     if remove_www
-      domain = domain.gsub('www.', '')
+      domain = domain.gsub(/^www\./, '')
     end
 
     domain
