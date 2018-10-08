@@ -2,9 +2,11 @@ require "domainotron/version"
 
 module Domainotron
   def self.get_domain(url, remove_www: true)
-    normalized = url.sub(/:\d+{2,6}/, '').sub(/\/\Z/, '')
+    return unless url
 
-    unless url.match /^(http:\/\/|https:\/\/|\/\/)/
+    normalized = url.to_s.sub(/:\d+{2,6}/, '').sub(/\/\Z/, '')
+
+    unless normalized.match /^(http:\/\/|https:\/\/|\/\/)/
       normalized = '//' + normalized
     end
 

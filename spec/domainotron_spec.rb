@@ -6,6 +6,10 @@ RSpec.describe Domainotron do
   end
 
   describe 'get_domain' do
+    it 'return nil when nil is passed' do
+      expect(subject.get_domain nil).to be_nil
+    end
+
     context 'without www' do
       [
         ['http://craft.co', 'craft.co'],
