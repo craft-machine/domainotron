@@ -11,11 +11,16 @@ RSpec.describe Domainotron do
     end
 
     it 'returns nil when domain URL with a space in the end is passed' do
-      expect(subject.get_domain 'http://www.wealthatwork.co.uk/ ').to be_nil
+      expect(subject.get_domain 'http://www.wealthatwork.co.uk/ ').to eq('wealthatwork.co.uk')
     end
 
     it 'returns nil when invalid domain URL is passed' do
       expect(subject.get_domain 'discount=5%').to be_nil
+    end
+
+
+    it 'returns nil when invalid domain schema URL is passed' do
+      expect(subject.get_domain 'http:///www.thebeneficial.com').to be_nil
     end
 
     context 'without www' do

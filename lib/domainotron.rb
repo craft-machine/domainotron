@@ -16,6 +16,8 @@ module Domainotron
       return nil
     end
 
+    return nil unless domain
+
     if remove_www
       domain = domain.gsub(/^www\./, '')
     end
