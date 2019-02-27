@@ -170,7 +170,7 @@ RSpec.describe Domainotron do
         ["https://yello.my.salesforce.com", ['yello.my.salesforce.com', 'my.salesforce.com', "salesforce.com"]]
       ].each do |test_case|
         it "extracts #{test_case[1]} domain from #{test_case[0]}" do
-          expect(subject.get_domain_variants test_case[0]).to eq test_case[1]
+          expect(subject.get_domain_variants test_case[0]).to eq test_case[1].reverse
         end
       end
     end
@@ -224,7 +224,7 @@ RSpec.describe Domainotron do
         ["https://yello.my.salesforce.com", ['yello.my.salesforce.com', 'my.salesforce.com', "salesforce.com"]]
       ].each do |test_case|
         it "extracts #{test_case[1]} domain from #{test_case[0]}" do
-          expect(subject.get_domain_variants(test_case[0], remove_www: false)).to eq test_case[1]
+          expect(subject.get_domain_variants(test_case[0], remove_www: false)).to eq test_case[1].reverse
         end
       end
     end
