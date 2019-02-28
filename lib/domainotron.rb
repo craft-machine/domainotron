@@ -29,8 +29,8 @@ module Domainotron
       return unless normalized
 
       begin
-        domain = PublicSuffix.parse(normalized)
-      rescue PublicSuffix::DomainNotAllowed
+        domain = ::PublicSuffix.parse(normalized)
+      rescue ::PublicSuffix::DomainNotAllowed
         return
       end
 
