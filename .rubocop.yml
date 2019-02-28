@@ -1,0 +1,256 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - 'bin/**/*'
+    - 'lib/tasks/**/*'
+    - 'lib/elastic_percolator.rb'
+    - 'app/api/dodo/document.rb'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'spec/**/*'
+    - 'vendor/bundle/**/*'
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - staging
+    - test
+    - qa
+
+Rails:
+  Enabled: true
+
+Rails/OutputSafety:
+  Enabled: false
+
+# EnforcedStyle: outdent => 35 offenses
+# EnforcedStyle: indent => 0 offense
+Layout/AccessModifierIndentation:
+  EnforcedStyle: indent
+  Enabled: true
+
+# EnforcedStyle: empty_lines => 135 offenses
+# EnforcedStyle: empty_lines_except_namespace => 19 offenses
+# EnforcedStyle: empty_lines_special => 15 offenses
+# EnforcedStyle: no_empty_lines => 3 offenses
+Layout/EmptyLinesAroundModuleBody:
+  EnforcedStyle: no_empty_lines
+  Enabled: true
+
+# EnforcedStyle: same_line => 5 offenses
+# EnforcedStyle: new_line => 90 offenses
+Layout/MultilineAssignmentLayout:
+  EnforcedStyle: same_line
+  Enabled: true
+
+# EnforcedStyle: symmetrical => 8 offenses
+# EnforcedStyle: new_line => 34 offenses
+# EnforcedStyle: same_line => 37 offenses
+Layout/MultilineMethodCallBraceLayout:
+  EnforcedStyle: symmetrical
+  Enabled: true
+
+# EnforcedStyleInsidePipes: space => 571 offenses
+# EnforcedStyleInsidePipes: no_space => 0 offense
+Layout/SpaceAroundBlockParameters:
+  EnforcedStyleInsidePipes: no_space
+  Enabled: true
+
+# EnforcedStyle: space => 4 offenses
+# EnforcedStyle: no_space => 15 offenses
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: space
+  Enabled: true
+
+# EnforcedStyle: space, EnforcedStyleForEmptyBrackets: space => 455 offenses
+# EnforcedStyle: space, EnforcedStyleForEmptyBrackets: no_space => 415 offenses
+# EnforcedStyle: no_space, EnforcedStyleForEmptyBrackets: space => 44 offenses
+# EnforcedStyle: no_space, EnforcedStyleForEmptyBrackets: no_space => 4 offenses
+# EnforcedStyle: compact, EnforcedStyleForEmptyBrackets: space => 452 offenses
+# EnforcedStyle: compact, EnforcedStyleForEmptyBrackets: no_space => 412 offenses
+Layout/SpaceInsideArrayLiteralBrackets:
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBrackets: no_space
+  Enabled: true
+
+# EnforcedStyle: space => 785 offenses
+# EnforcedStyle: no_space => 1 offense
+Layout/SpaceInsideReferenceBrackets:
+  EnforcedStyle: no_space
+  Enabled: true
+
+# EnforcedStyle: space => 144 offenses
+# EnforcedStyle: no_space => 2 offenses
+Layout/SpaceInsideStringInterpolation:
+  EnforcedStyle: no_space
+  Enabled: true
+
+# EnforcedStyle: final_newline => 0 offense
+# EnforcedStyle: final_blank_line => 285 offenses
+Layout/TrailingBlankLines:
+  EnforcedStyle: final_newline
+  Enabled: true
+
+# EnforcedStyle: lowercase => 13 offenses
+# EnforcedStyle: uppercase => 0 offense
+Naming/HeredocDelimiterCase:
+  EnforcedStyle: uppercase
+  Enabled: true
+
+# EnforcedStyle: snake_case => 0 offense
+# EnforcedStyle: camelCase => 284 offenses
+Naming/MethodName:
+  EnforcedStyle: snake_case
+  Enabled: true
+
+# EnforcedStyle: snake_case => 0 offense
+# EnforcedStyle: camelCase => 476 offenses
+Naming/VariableName:
+  EnforcedStyle: snake_case
+  Enabled: true
+
+# EnforcedStyle: assign_to_condition => 0 offense
+# EnforcedStyle: assign_inside_condition => 18 offenses
+Style/ConditionalAssignment:
+  EnforcedStyle: assign_to_condition
+  Enabled: true
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining
+  Enabled: true
+
+# EnforcedStyle: for => 10 offenses
+# EnforcedStyle: each => 0 offense
+Style/For:
+  EnforcedStyle: each
+  Enabled: true
+
+# EnforcedStyle: when_needed => 285 offenses
+# EnforcedStyle: always => 285 offenses
+# EnforcedStyle: never => 0 offense
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+  Enabled: true
+
+# EnforcedStyle: line_count_dependent => 78 offenses
+# EnforcedStyle: lambda => 163 offenses
+# EnforcedStyle: literal => 0 offense
+Style/Lambda:
+  EnforcedStyle: literal
+  Enabled: true
+
+# EnforcedStyle: call => 7 offenses
+# EnforcedStyle: braces => 48 offenses
+Style/LambdaCall:
+  EnforcedStyle: call
+  Enabled: true
+
+# EnforcedStyle: require_parentheses => 0 offense
+# EnforcedStyle: require_no_parentheses => 226 offenses
+# EnforcedStyle: require_no_parentheses_except_multiline => 226 offenses
+Style/MethodDefParentheses:
+  EnforcedStyle: require_parentheses
+  Enabled: true
+
+# EnforcedStyle: separated => 0 offense
+# EnforcedStyle: grouped => 18 offenses
+Style/MixinGrouping:
+  EnforcedStyle: separated
+  Enabled: true
+
+# EnforcedStyle: keyword => 0 offense
+# EnforcedStyle: braces => 10 offenses
+Style/MultilineMemoization:
+  EnforcedStyle: keyword
+  Enabled: true
+
+# EnforcedStyle: return => 4 offenses
+# EnforcedStyle: return_nil => 26 offenses
+Style/ReturnNil:
+  EnforcedStyle: return
+  Enabled: true
+
+# EnforcedStyle: require_parentheses => 2 offenses
+# EnforcedStyle: require_no_parentheses => 115 offenses
+Style/StabbyLambdaParentheses:
+  EnforcedStyle: require_parentheses
+  Enabled: true
+
+# EnforcedStyle: single_quotes => 1 offense
+# EnforcedStyle: double_quotes => 12 offenses
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: single_quotes
+  Enabled: true
+
+# EnforcedStyleForMultiline: comma => 34 offenses
+# EnforcedStyleForMultiline: consistent_comma => 55 offenses
+# EnforcedStyleForMultiline: no_comma => 1 offense
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: no_comma
+  Enabled: true
+
+# EnforcedStyle: percent => 31 offenses
+# EnforcedStyle: brackets => 5 offenses
+Style/WordArray:
+  EnforcedStyle: brackets
+  Enabled: true
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: true
+  Max: 160
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: true
+  Max: 6
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+# EnforcedStyleAlignWith: start_of_line => 0 offense
+# EnforcedStyleAlignWith: def => 25 offenses
+Layout/DefEndAlignment:
+  EnforcedStyleAlignWith: start_of_line
+  Enabled: true
+
+# EnforcedStyle: if => 30 offenses
+# EnforcedStyle: case => 3 offenses
+# EnforcedStyle: both => 33 offenses
+Style/MissingElse:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+Style/AndOr:
+  EnforcedStyle: conditionals
