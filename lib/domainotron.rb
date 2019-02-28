@@ -1,4 +1,5 @@
 require 'domainotron/version'
+require 'public_suffix'
 
 module Domainotron
   class << self
