@@ -1,4 +1,5 @@
 require 'domainotron/version'
+require 'public_suffix'
 
 module Domainotron
   class << self
@@ -29,8 +30,8 @@ module Domainotron
       return unless normalized
 
       begin
-        domain = PublicSuffix.parse(normalized)
-      rescue PublicSuffix::DomainNotAllowed
+        domain = ::PublicSuffix.parse(normalized)
+      rescue ::PublicSuffix::DomainNotAllowed
         return
       end
 
