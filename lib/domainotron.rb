@@ -1,5 +1,4 @@
-# coding: utf-8
-require "domainotron/version"
+require 'domainotron/version'
 
 module Domainotron
   class << self
@@ -8,9 +7,9 @@ module Domainotron
     def get_domain(url, remove_www: true)
       return nil unless url
 
-      normalized = url.to_s.sub(/:\d+{2,6}/, '').sub(/\/\Z/, '').strip
+      normalized = url.to_s.sub(/:\d+{2,6}/, '').sub(%r{/\Z}, '').strip
 
-      unless normalized.match /^(http:\/\/|https:\/\/|\/\/)/
+      unless normalized =~ %r{^(http://|https://|//)}
         normalized = '//' + normalized
       end
 
@@ -22,9 +21,7 @@ module Domainotron
 
       return nil unless domain
 
-      if remove_www
-        domain = domain.gsub(/^www\./, '')
-      end
+      domain = domain.gsub(/^www\./, '') if remove_www
 
       domain
     end
@@ -45,10 +42,10 @@ module Domainotron
     private
 
     def collect_subdomains(domain)
-      domain.trd.split(DOT).reverse.
-        reduce([]) { |acc, subdomain| acc << [subdomain, acc.last.to_s].join(DOT) }.
-        map { |subdomain| subdomain + domain.domain }.
-        unshift(domain.domain)
+      domain.trd.split(DOT).reverse
+            .reduce([]) { |acc, subdomain| acc << [subdomain, acc.last.to_s].join(DOT) }
+            .map { |subdomain| subdomain + domain.domain }
+            .unshift(domain.domain)
     end
   end
 end
