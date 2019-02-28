@@ -1,5 +1,6 @@
 require "bundler/setup"
 require "domainotron"
+require "public_suffix"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
