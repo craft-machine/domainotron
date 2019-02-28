@@ -5,21 +5,19 @@ module Domainotron
     DOT = '.'.freeze
 
     def get_domain(url, remove_www: true)
-      return nil unless url
+      return unless url
 
       normalized = url.to_s.sub(/:\d+{2,6}/, '').sub(%r{/\Z}, '').strip
 
-      unless normalized =~ %r{^(http://|https://|//)}
-        normalized = '//' + normalized
-      end
+      normalized = '//' + normalized unless normalized =~ %r{^(http://|https://|//)}
 
       begin
         domain = URI.parse(normalized).host
       rescue URI::InvalidURIError
-        return nil
+        return
       end
 
-      return nil unless domain
+      return unless domain
 
       domain = domain.gsub(/^www\./, '') if remove_www
 
@@ -28,12 +26,12 @@ module Domainotron
 
     def get_domain_variants(url, remove_www: true)
       normalized = get_domain(url, remove_www: remove_www)
-      return nil unless normalized
+      return unless normalized
 
       begin
         domain = PublicSuffix.parse(normalized)
       rescue PublicSuffix::DomainNotAllowed
-        return nil
+        return
       end
 
       domain.trd ? collect_subdomains(domain) : [domain.domain]
